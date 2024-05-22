@@ -1,7 +1,7 @@
 const ClassTimetableSchema = require("../models/ClassTimetableSchema");
 
 const addClassTimeTable = async ( req, res ) => {
-  const { day, startTime, endTime, teacher, subject, room , course, semester, year } = req.body;
+  const { day, startTime, endTime, teacher, subject, room , course, semester, academicYear } = req.body;
 
     try {
         const addTimeTable = await ClassTimetableSchema.create({
@@ -13,7 +13,7 @@ const addClassTimeTable = async ( req, res ) => {
           startTime:startTime,
           subject:subject,
           teacher:teacher,
-          academicYear:year
+          academicYear:academicYear
         })
         const result = await addTimeTable.save()
         res.send(result)
