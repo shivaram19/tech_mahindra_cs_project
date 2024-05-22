@@ -24,6 +24,7 @@ const {
     removeStudentAttendance } = require('../controllers/student-controller.js');
 const { subjectCreate, classSubjects, deleteSubjectsByClass, getSubjectDetail, deleteSubject, freeSubjectList, allSubjects, deleteSubjects } = require('../controllers/subject-controller.js');
 const { teacherRegister, teacherLogIn, getTeachers, getTeacherDetail, deleteTeachers, deleteTeachersByClass, deleteTeacher, updateTeacherSubject, teacherAttendance } = require('../controllers/teacher-controller.js');
+const { addClassTimeTable, getTimeTable } = require('../controllers/timetable-controller.js');
 
 // Admin
 router.post('/AdminReg', adminRegister);
@@ -33,6 +34,10 @@ router.get("/Admin/:id", getAdminDetail)
 // router.delete("/Admin/:id", deleteAdmin)
 
 // router.put("/Admin/:id", updateAdmin)
+
+// timetable 
+router.post("/student/addTimeTable", addClassTimeTable );
+router.get("/student/getTimeTable", getTimeTable )
 
 // Student
 

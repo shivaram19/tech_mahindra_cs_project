@@ -6,7 +6,7 @@ const classTimeTableSchema = new mongoose.Schema({
         required: true
     },
     startTime: {
-        type: Number,
+        type: String,
         required: true
     },
     endTime: {
@@ -15,34 +15,28 @@ const classTimeTableSchema = new mongoose.Schema({
     },
     teacher: {
         type: String,
-        ref: 'sclass',
         required: true,
     },
     subject: {
         type: String,
-        ref: 'admin',
         required: true,
     },
     roomNumber: {
         type: String,
-        ref: 'admin',
         required: true,
     },
     course: {
         type: String,
-        ref: 'admin',
         required: true,
     },
     semester: {
         type: String,
-        ref: 'admin',
         required: true,
     },
     academicYear: {
         type: String,
-        ref: 'admin',
         required: true,
     }
 });
 
-module.exports = mongoose.model("timetable", classTimeTableSchema);
+module.exports = mongoose.model("classTimeTable", classTimeTableSchema);

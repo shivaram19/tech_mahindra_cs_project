@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const Student = require('../models/studentSchema.js');
 const Subject = require('../models/subjectSchema.js');
+const ClassTimetableSchema = require('../models/ClassTimetableSchema.js');
 
 const studentRegister = async (req, res) => {
     try {
@@ -224,6 +225,7 @@ const clearAllStudentsAttendanceBySubject = async (req, res) => {
     }
 };
 
+
 const clearAllStudentsAttendance = async (req, res) => {
     const schoolId = req.params.id
 
@@ -270,6 +272,7 @@ const removeStudentAttendance = async (req, res) => {
         res.status(500).json(error);
     }
 };
+
 
 
 module.exports = {
